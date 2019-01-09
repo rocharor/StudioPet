@@ -11,12 +11,12 @@
     @if (count($data) == 0)
         <h1>Nenhum registro encontrado</h1>
     @else
-        <input type="text" name="search" placeholder="Buscar" class='form-control'>
+        <input type="text" name="search" placeholder="Buscar" class='form-control' disabled>
 
         <br>
         <br>
 
-        <table class='table table-stripped'>
+        <table class='table table-striped'>
             <thead>
                 <th>ID</th>
                 <th>Nome Responsável</th>
@@ -31,9 +31,9 @@
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->name_animal }}</td>
                         <td>{{ $value->phone }}</td>
-                        <td><a href='/show/{{$value->id}}' class='btn btn-success'><span class='glyphicon glyphicon-eye-open'></span></a></td>
-                        <td><a href='/edit/{{$value->id}}' class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></a></td>
-                        <td><a href='/destroy/{{$value->id}}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>
+                        <td style="width:10px"><a href='/show/{{$value->id}}' class='btn btn-success'><span class='glyphicon glyphicon-eye-open'></span></a></td>
+                        <td style="width:10px"><a href='/edit/{{$value->id}}' class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></a></td>
+                        <td style="width:10px"><a href='/destroy/{{$value->id}}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>
                     </tr>
                 @endforeach
             </tbody>

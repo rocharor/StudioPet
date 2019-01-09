@@ -1,11 +1,14 @@
 @extends('template')
 @section('content')
 
+    <br>
+
     <a href="/" class='btn btn-primary'> Home </a>
 
     @if (isset($data))
         <a href="/show/{{ $data->id }}" class='btn btn-primary'> Visualizar</a>
-
+        <br>
+        <br>
         <form action="/update/{{ $data->id }}" method="post">
             {{ csrf_field() }}
             <label>Nome:</label> <input type="text" name='name' class='form-control' value="{{ $data->name }}">
@@ -14,9 +17,11 @@
             <label>Observações:</label> <br><textarea name="obs" rows="10" class='form-control'>{{ $data->obs }}</textarea>
 
             <br>
-            <input type="submit" value="Salvar" class='btn btn-primary'>
+            <input type="submit" value="Salvar" class='btn btn-success'>
         </form>
     @else
+        <br>
+        <br>
         <form action="/store" method="post">
             {{ csrf_field() }}
             <label>Nome:</label> <input type="text" name='name' class='form-control'>
@@ -24,7 +29,7 @@
             <label>Telefone:</label> <input type="text" name='phone' class='form-control'>
             <label>Observações:</label> <br><textarea name="obs" rows="10" class='form-control'></textarea>
             <br>
-            <input type="submit" value="Salvar" class='btn btn-primary'>
+            <input type="submit" value="Salvar" class='btn btn-success'>
         </form>
     @endif
 @endsection
